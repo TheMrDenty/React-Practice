@@ -3,7 +3,7 @@ import Review from './Review';
 import { FaGithubSquare } from 'react-icons/fa';
 function App() {
   return <h2>
-    reviews project setup
+    reviews project setup.
     <FaGithubSquare className='icon'/>
     </h2>;
 }
