@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import rgbToHex from './utils'
 
-const SingleColor = ({rgb, weight, index, hexColor}) => {
+const SingleColor = ({rgb, weight, index, hexColor, length}) => {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(',');
   const hex = rgbToHex(...rgb);
-  const hexValue = `#${hexColor}`
+  const hexValue = `${hexColor}`
 
   useEffect(()=> {
     const timeout = setTimeout(()=>{
@@ -13,14 +13,13 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
     }, 3000)
     return ()=>clearTimeout(timeout);
   }, [alert])
-
   return (
     <article 
-      className={`color ${index > 10 && 'color-light'}`} 
+      className={`color ${index > (Math.ceil(length / 2)) - 1 && 'color-light'}`} 
       style={{backgroundColor:`rgb(${bcg})`}}
       onClick={()=>{
         setAlert(true);
-        {/* change hexValue to hex if using rbgToHex function */}
+        /* change hexValue to hex if using rbgToHex function */
         navigator.clipboard.writeText(hexValue)
       }}
     >
