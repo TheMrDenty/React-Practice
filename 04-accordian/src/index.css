@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 /*
 =============== 
 Variables
@@ -46,6 +48,8 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 920px;
+
+  --font-primary: 'Ubuntu', sans-serif;
 }
 /*
 =============== 
@@ -61,8 +65,7 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-primary);
   background: var(--clr-purple);
   color: var(--clr-grey-1);
   line-height: 1.5;
